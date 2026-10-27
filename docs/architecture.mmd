@@ -1,0 +1,8 @@
+flowchart LR
+  A[Motor and driver] --> B[ACS712 current sensor]
+  A --> C[MPU6050 inertial sensor]
+  B --> D[ESP32 acquisition firmware]
+  C --> D
+  D -->|CSV over USB serial| E[Raw capture CSV]
+  E --> F[Python validation and metrics]
+  F --> G[JSON summary and plots]
